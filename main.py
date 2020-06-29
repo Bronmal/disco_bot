@@ -14,12 +14,11 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('!join'):
+    if message.content == '!join':
         channel = message.author.voice.channel
         voice = await channel.connect(timeout=10.0,reconnect=True)
 
-    if message.content.startswith('!dis'):
-        channel = message.author.voice.channel
+    if message.content == '!disconnect':
         await voice.disconnect(force=False)
 
 
