@@ -10,7 +10,7 @@ class Player():
     
     def play_list(self, path_list):
         number = 0
-        if self.voice.is_done():
+        if not self.voice.is_playing():
             number += 1
             self.voice.play(discord.FFmpegPCMAudio(path_list[number]))
         else:

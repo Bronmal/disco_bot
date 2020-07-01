@@ -35,3 +35,4 @@ class Zaycev():
                 with open(song_name + str(counter) + '.mp3', 'wb') as f:
                     f.write(r.content)
                 counter += 1
+        return path_song
